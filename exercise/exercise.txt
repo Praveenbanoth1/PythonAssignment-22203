@@ -1,0 +1,901 @@
+##1.Display square and perfect square root of numbers from 48 to 82. using list Comprehension.
+'''
+lst = [(i ** 2)  for i in range(48, 82) ]
+lst1 = [i for i in range(48,82) if (i ** (0.5) == int(i ** (0.5)))]
+
+print("squares: ",lst)
+print("perfect square root: ", lst1)'''
+
+
+##squares:  [2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 3249, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 4489, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 5929, 6084, 6241, 6400, 6561]
+##perfect square root:  [49, 64, 81]
+
+
+##2.Display square and perfect square root of numbers from 48 to 82. using dictionary Comprehension.
+
+
+'''lst = {(i ** 2)  for i in range(48, 82) }
+lst1 = {i for i in range(48,82) if (i ** (0.5) == int(i ** (0.5)))}
+
+print("squares: ",lst)
+print("perfect square root: ", lst1)'''
+
+
+##squares:  {2304, 3969, 4096, 4225, 3844, 4356, 6400, 3721, 4489, 5625, 2704, 3600, 4624, 5776, 3481, 4761, 6561, 3364, 4900, 2601, 5929, 3249, 5041, 3136, 5184, 2500, 6084, 3025, 5329, 2401, 6241, 2916, 5476, 2809}
+##perfect square root:  {64, 49, 81}
+
+
+##3.if the square of number inside list is divisible by 2 print the num.
+##(1st question's answer should be taken as a list)
+
+'''list_1 = list(map(int, input().split(" ")))
+lst1 = [i for i in list_1 if (i ** (0.5) == int(i ** (0.5)))]
+ls = [i for i in lst1 if i % 2 == 0]
+print(ls)'''
+
+##1 2 3 4 5 6 7 8 9 10 64
+##[4, 64]
+
+
+
+#1. WAP to find the target value of 5 in the given list of 1,5,7,8,90,6,and 23 elements?
+'''
+ls = [1,5,7,8,90,6,23]
+if 5 in ls:
+    print(ls.index(5))
+'''
+#1
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------
+##2. WAP to sort the given list of elements 1,5,7,8,90,6,and 23, without using sort() function?
+'''
+n = list(map(int,input().split(",")))   #[1,2,3,4,5,6,67]
+new_list = []
+while n:
+    mini = n[0]
+    for i in n:
+        if i < mini:
+            mini = i
+    new_list.append(mini)
+    n.remove(mini)
+print(new_list)'''
+
+##1,5,7,8,90,6,23
+'''
+[1, 5, 6, 7, 8, 23, 90]
+'''
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------
+#3. WAP to calcalte the compound interest of 3 years with the priciple amount of RS:10000 and rate of return is 5 percentage for annum.
+#  and display the total amount to pay on  the end of the year.?
+
+'''
+price = int(input())
+time = int(input())
+rate = int(input())
+time = time * 12
+total = (price * time * rate)/100
+print(price + total)
+'''
+
+##10000
+##3
+##5
+'''
+28000.0
+'''
+
+
+
+#---------------------------------------------------------------------------------------------------------------------------
+
+#4. WAP to calculate the sum of the given matrix   [[x1,x2,x3],[x4,x5,x6],[x7,x8,x9]], where x1,x2....x9 values must take from command-line
+#   arguments?
+''' 1 2 3
+    4 5 6  
+    7 8 9   
+
+sum is : 45 '''  
+
+'''
+a = list(map(int,input().split()))
+b = list(map(int,input().split()))
+c = list(map(int,input().split()))
+    
+sum_a = 0
+sum_b = 0
+sum_c = 0
+
+for i, j, k in (a,b, c):
+    sum_a += i
+    sum_b += j
+    sum_c += k
+print(sum_a + sum_b + sum_c)'''
+##1 2 3
+##4 5 6
+##7 8 9
+'''
+45
+'''
+
+    
+a1 = list(map(int,input().split()))
+b1 = list(map(int,input().split()))
+c1 = list(map(int,input().split()))
+
+a = 0
+b = 0
+c = 0
+for i in a1:
+    a +=i
+for j in b1:
+    b +=i
+for i in c1:
+    c+=i
+print(a + b + c)
+
+
+
+##1 2 3 4 5 6
+##3 4 5
+##6 7 8 9 10
+'''
+79
+'''
+
+#---------------------------------------------------------------------------------------------------------------------------
+
+
+
+#5. WAP pattern program
+
+##     * * * * *
+##      * * * *
+##       * * *
+##        * *
+##         *
+##        * *
+##       * * *
+##      * * * * 
+##     * * * * *     
+
+
+'''
+n = int(input())
+for i in range (0, n):
+    spaces = " " * i
+    stars = "* " * (n - i)
+    print(spaces + stars)
+k = n -1
+for j in range(2, k+1):
+    spaces = " " * (n - j)
+    stars = "* " * (j)
+    print(spaces + stars)
+print("* " * n)
+'''
+
+
+##5
+'''
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * *
+'''
+
+
+# 1. WAP for eligibility of a canditate voter id,
+
+'''voter_age = int(input("Enter Your Age: "))
+
+if voter_age >= 18  and voter_age <= 80:
+    print("You Are Eligeble")
+else:
+    print("You are NOt Eligeble")
+
+
+#input   Enter Your Age: 55
+#output  You Are Eligeble'''
+
+#======================================================================================================================================================
+
+
+#2. WAP for calculating student marks in 5-subjects,and find grades,(suppose grade A,B,C and Fail)
+
+#model-1
+
+'''sub_1 = int(input("Subject 1: "))
+sub_2 = int(input("Subject 2: "))
+sub_3 = int(input("Subject 3: "))
+sub_4 = int(input("Subject 4: "))
+sub_5 = int(input("Subject 5: "))
+
+if ((sub_1>= 80)and(sub_2>= 80)and(sub_3>= 80)and(sub_4 >= 80)and(sub_5>= 80)) :
+    print("A Grade")
+elif ((sub_1>= 60)and(sub_2>= 60)and(sub_3>= 60)and(sub_4 >= 60)and(sub_5>= 60)) :
+    print("B Grade")
+elif ((sub_1>= 40)and(sub_2>= 40)and(sub_3>= 40)and(sub_4 >= 40)and(sub_5>= 40)) :
+    print("C Grade")
+else:
+    print("Fail")
+
+
+#inputs
+Subject 1: 67
+Subject 2: 44
+Subject 3: 66
+Subject 4: 34
+Subject 5: 11
+#output
+Fail'''
+
+#model-2
+
+
+'''sub_1 = int(input("Subject 1: "))
+sub_2 = int(input("Subject 2: "))
+sub_3 = int(input("Subject 3: "))
+sub_4 = int(input("Subject 4: "))
+sub_5 = int(input("Subject 5: "))
+
+total_marks = sub_1 + sub_2 + sub_3 + sub_4 + sub_5
+
+if total_marks >= 400:
+    print("A grade  Keep doing that")
+
+elif total_marks >= 300:
+    print("B grade work hard")
+elif total_marks >= 250 :
+    print("c Grade poor concentrate on studies")
+else:
+    print("Fail Give your college address")
+'''
+
+
+#======================================================================================================================================================
+
+
+
+#3. WAP for finding  even or odd number using (if .. else ... condition)?
+
+'''number = int(input("Enter a NUmber : "))
+
+if number % 2==0:
+    print("Even")
+else:
+    print("Odd")
+
+#input   Enter a NUmber : 77
+#output  Odd'''
+
+
+#======================================================================================================================================================
+
+
+
+#4. WAP calculating area of a circle, result in positive integers only not in float values
+
+
+'''radius = int(input("Enter Your Number: "))
+
+pi = 3.14
+
+area_of_circle = pi * (radius **2)
+print("Area of Circle is: ",int(area_of_circle))
+
+#input   Enter Your Number: 33
+#output  Area of Circle is:  3419'''
+
+
+
+
+#======================================================================================================================================================
+
+
+
+#5. WAP for finding  variables A and B are having the same memory location?
+
+
+'''a = int(input("Enter your code: "))
+b = int(input("Enter your code: "))
+if id(a) == id(b):
+    print("Same Location")
+else:
+    print("No")
+
+
+#input
+Enter your code: 12
+Enter your code: 89
+#output
+No'''
+
+
+
+#======================================================================================================================================================
+
+
+
+# Problem statement.
+
+
+'''
+number = int(input("Enter A Number in between 1 to 20: "))
+if 1 <= number < 20:
+    for i in range(number):
+        print(i ** 2)
+else:
+    print("Given number is outof range. please enter a proper number.")
+
+
+#input    Enter A Number in between 1 to 20: 78
+#output   Given number is outof range. please enter a proper number.'''
+
+
+#======================================================================================================================================================
+
+def fib(n):
+    a = 0
+    b = 1
+    for i in range(1, n+1):
+        c = a + b
+        a = b
+        b = c
+        print(c,end = " ")
+n = int(input())
+fib(n)
+
+
+
+#############################################################################
+
+#1.WAP to reverse a number
+'''num=input("enter a number : ")
+for i in num:
+    x=num[::-1]
+print("the reverse of the num is ",int(x))
+
+op/=enter a number : 456
+the reverse of the num is  654'''
+
+#2.WAP to count  the number  occurrence/frequency  of a 
+#each character in a string .
+
+'''st=input("enter a string : ")
+count=0
+for i in st:
+    x=st.count(i)
+    print(x,end="")
+
+op/=enter a string : anil kumar nahak
+4211221141224142'''
+
+#3. WAP  to check length of two string is equal or not.
+'''st1=input("enter 1st string : ")
+st2=input("enter 2nd string : ")
+if len(st1)==len(st2):
+    print("equal")
+else:
+    print("not equal")
+
+op/=enter 1st string : aill
+enter 2nd string : anil
+equal'''
+
+#4.Python program to print even numbers up to 100
+
+'''for i in range(1,100):
+    if i%2==0:
+        print(i,end=",")
+
+op/=2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,
+32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,
+70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,'''
+
+#5.Write a program in python to find greatest among three integers
+      
+'''num1=int(input("enter 1st num : "))
+num2=int(input("enter 2nd num : "))
+num3=int(input("enter 3rd num : "))
+if num1>num2 and num1>num3:
+    print(f"{num1} is greater")
+elif num2>num1 and num2>num3:
+    print(f"{num2} is greater")
+else:
+    print(f"{num3} is greater")
+
+op/=enter 1st num : 45
+enter 2nd num : 89
+enter 3rd num : 5
+89 is greater'''
+
+
+
+#1. Write a program to get all vowels from given string?
+
+'''
+word=input("Enter your word:")
+
+for i in word:
+    if i in ('a','e','i','o','u'):
+        print(i,end=' ')'''
+
+
+##Enter your word:praveen
+##a e e 
+
+            
+#================================================================================================== 
+
+#2. Write a program to calculate the simple interest?
+
+'''
+prince_amount=int(input("Enter your principle amount:"))
+rate_return=int(input("Enter your rate of return percentage:"))
+time_month=int(input("Enter your time in months:"))
+
+tot=(prince_amount*rate_return*time_month)//100
+print("Simple interest to return: ",tot)'''
+
+
+
+##Enter your principle amount:50000
+##Enter your rate of return percentage:5
+##Enter your time in months:36
+##Simple interest to return:  90000
+
+#================================================================================================== 
+
+#3. Python Program to Find Sum of Series 1 + 1/2 + 1/3 + 1/4 + ……. + 1/N?
+
+'''
+num=int(input("Enter your number:"))
+s=1
+for i in range(2,num+1):
+    s=s+(1/i)
+print(round(s,2))'''
+
+## Enter your number:8
+## 2.72
+
+#================================================================================================== 
+
+#4. Python Program to Find the Sum of the Series 1/1!+1/2!+1/3!+…1/N!?
+
+
+'''
+num=int(input("Enter your number:"))
+s=0
+for i in range(1,num+1):
+    fact=1
+    for j in range(1,i+1):
+        fact=fact*j
+    else:
+        s=s+(1/fact)
+print(round(s,3))'''
+
+
+##Enter your number:99
+##1.718
+
+#================================================================================================== 
+
+#5. Python Program to Replace All Occurrences of ‘a’ with $ in a String?
+
+
+'''
+word=input("enter word:")
+
+for i in word:
+    if i=='a':
+        print('$',end='')
+    else:
+        print(i,end='')
+'''
+
+##enter word:praveen banoth
+##pr$veen b$noth
+
+
+
+##1.
+##Calculate income tax for the given income by adhering to the below rules
+##Taxable Income    Rate (in %)
+##First $10,000    0
+##Next $10,000    10
+##The remaining    20
+##Expected Output:
+##
+##For example, suppose the taxable income is 45000 the income tax payable is
+##
+##10000*0% + 10000*10%  + 25000*20% = $6000.
+
+
+
+'''
+income=int(input("enter your income : "))
+if income<10000:
+    print("tax is : 0")
+elif income > 10000 and income < 20000:
+    print(f"{(10000*(0/100))+((income-10000)*(10/100))}")
+else:
+    print(f"{(10000*(0/100))+(10000*(10/100))+(income-20000)*(20/100)}")'''
+
+
+##enter your income : 45000
+##6000.0
+
+
+    
+#2.Count the length of list with out using any inbuilt function.
+
+'''
+lst=input("enter the list of element :").split(",")
+print(lst)
+count=0
+for i in lst:
+    count+=1
+print(count)
+'''
+
+##enter the list of element :12,45,2,11,4,66,8,9
+##['12', '45', '2', '11', '4', '66', '8', '9']
+##8
+
+
+#3.Write a Python program to create a histogram from a given list of integers.
+
+'''
+lst = list(map(int,input().split()))
+for i in lst:
+    print("* "  * i)'''
+
+##5 6 4 2 9
+'''
+* * * * * 
+* * * * * * 
+* * * * 
+* * 
+* * * * * * * * *
+'''
+
+###4. Take input from user and if input is string print String
+##if input is integer/float print integer
+##if input is mix of string and integer print Error
+##HINT Can be done using ASCII code
+
+
+
+#5.Python program to check if a string is palindrome or not
+
+'''
+n = input()
+if n == n[::-1]:
+    print("Palindrome")
+else:
+    print("Not a palindrome")'''
+
+##praveen
+##Not a palindrome
+
+
+
+
+#1. WAP in python arrange string characters such that lowercase letters should come first
+
+'''
+n =input()
+upper = ""
+lower = ""
+for i in n:
+    if i.islower():
+        lower += i
+    else:
+        upper += i
+print(lower + upper,end = "")
+'''
+        
+#======================================================================================================================================
+#2WAP to print sum of prime numbers in given list input :- 2 4 5 6 7 3 8 output :- 17
+'''
+def con(n):
+    new_list = []
+    for i in n:
+        el = int(i)
+        new_list.append(el)
+    return new_list
+
+n = input().split()
+
+sums = 0
+list_1 = con(n)
+for i in list_1:
+    prime = 0
+    for j in range (2,i):
+        if (i % j) == 0:
+            prime += 1
+            
+    if prime == 0 and i != 1:
+        sums += i
+print(sums)
+
+
+2 4 5 6 7 3 8
+17'''
+
+
+#==========================================================================================================================================
+#3.when do we use nested for loop.Write an example.
+'''Nested loops are useful when for each pass through the outer loop,
+you need to repeat some action on the data in the outer loop.
+
+
+
+a = int(input())
+b = int(input())
+for i in range(1, b+1):
+    pattern = ""
+    for j in range(1, i+1):
+        pattern = pattern + str(j) + " "
+    print(pattern)
+
+input
+1
+5
+ 
+output
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 '''
+#==========================================================================================================================================
+#4.WAP in python remove all characters from a string except integers
+#(ex:-  STR="H56U1E9JIG3l4w2" ,o/p:-5619342(only display integers) )
+
+'''a=input()
+for i in a:
+    if i.isdigit() == True:
+        print(i,end = "")
+
+H56U1E9JIG3l4w2
+5619342'''
+
+
+#==========================================================================================================================================
+
+
+#5.   WAP to take a list and find the possition of the item .
+#(eg= [45,12,66,2,33]  if i take 66 then it shows the index 2)
+
+'''
+li = list(input().split())
+length = len(li)
+val = input()
+for i in range(length):
+    if li[i] == val:
+        print(i)
+        
+
+12 34 pr 56 78 vs
+vs
+5'''
+
+
+
+
+##1.what is a variable in and describe the role of variable in python memory management?
+
+'''
+A Python variable is a symbolic name that is a reference or pointer to an object.
+
+Python optimizes memory utilization by allocating the same object reference to a new variable if the object already exists with the same value.
+That is why python is called more memory efficient.'''
+
+##2.what are the advantages and disadvantages of type casting?
+'''ADVANTAGES
+1.It can create any complex structure economically.
+2.The size of object doesn’t matter for casting.
+3.The casting objects have high compressive strength.'''
+
+'''DISADVANTAGES
+It gives poor surface finish and mostly requires surface finish operation.
+Casting defects involves in this process.
+It gives low fatigue strength compare to forging.
+It is not economical for mass production.'''
+
+
+##3.what is the difference between while loop and for loop?
+
+'''
+The major difference between for loop and while loop is that
+for loop is used when the number of iterations is known whereas,
+in the while loop,
+execution is done until the statement in the program is proved wrong.'''
+
+
+##4.write 5 string method with example?
+'''
+Python String Methods.
+1.  capitalize() 
+2.  casefold()
+3.  center() 
+4.  count() 
+5.  encode() '''
+
+##5.write the Precedence rule of python with example?
+
+
+'''
++x , -x , ~x	    Unary plus, Unary minus, Bitwise NOT
+* , / , // , %	    Multiplication, Division, Floor division, Modulus
++ , -	            Addition, Subtraction
+<< , >>	            Bitwise shift operators
+
+val = (1+1) * 2 **4//3+4-1
+    = 2 * 2 **4 // 3 +4 -1
+    = 2 * 16 // 3 + 4- 1
+    =32 //3 +4 - 1
+    = 10 + 4 - 1
+    =14 -1
+    =13'''
+
+
+
+##1.write a python program to print the pattern
+##        * 
+##       * * 
+##      * * * 
+##     * * * * 
+##    * * * * * 
+##   * * * * * * 
+##    * * * * * 
+##     * * * * 
+##      * * * 
+##       * * 
+##        *
+
+
+
+
+'''
+n = int(input("enter number: "))
+for i in range(1,n+1):
+    spaces = " " * (n- i)
+    stars = "* " * i
+    print(spaces + stars)
+
+k = n -1
+for i in range(1, k+1):
+    spaces = " " * i
+    stars = "* " * (n - i)
+    print(spaces + stars)'''
+
+
+##enter number: 5
+##    * 
+##   * * 
+##  * * * 
+## * * * * 
+##* * * * * 
+## * * * * 
+##  * * * 
+##   * * 
+##    * 
+
+
+
+    
+##2.How would you check if each word in a string begins with a capital letter?
+
+""" by using builtin function  ''variable[0] .isupper()'' we can check whether the string starts with Capital letter or not
+
+ex : 
+n = input("enter a name: ")
+if n[0].isupper():
+    print("Yes")
+else:
+    print("NO")"""
+
+##enter a name: Praveen
+##Yes
+
+##3.Write a Python program that prints all the numbers from 0 to 6 except 4 and 5.
+
+'''
+for i in range(0, 7):
+    if i != 4 and i !=5:
+        print(i, end = " ")'''
+
+##0 1 2 3 6
+
+
+##4.Print list of elements and store in a another list and print  reverse order of list
+
+'''
+n = list(map(int,input("enter a number : ").split()))
+print(n)
+print(n[::-1])'''
+
+
+##enetr a number : 1 2 3 4 5
+##[1, 2, 3, 4, 5]
+##[5, 4, 3, 2, 1]
+
+##5.write a python program to print the pattern
+##            A  
+##           B C  
+##          D E F  
+##         G H I J  
+##        K L M N O  
+##       P Q R S T U
+
+a = int(input("enter the number: "))
+count = 65
+k = 2*(a)-2
+for i in range(0,a):
+    for j in range(0,k):
+        print(end = " ")
+    k = k-1
+    for j in range(0,i+1):
+        alpha = chr(count)
+        print(alpha,end =" ")
+        count += 1
+    print(" ")
+
+
+
+##enter the number: 6
+##          A  
+##         B C  
+##        D E F  
+##       G H I J  
+##      K L M N O  
+##     P Q R S T U  
+
+
+
+
+#               3-Exercises
+#               -----------
+#======================================================================================================================
+
+#1.WAP to find the senior citizens in the given list,list values should take dynamicaly (or) from the user only.
+# suppose list=[23,67,45,89,65,12,15,19], and output:[65,67,89] final list should be in accending order.
+# person age is 60 (or) more than 60 belongs to senior citizens.?
+
+#======================================================================================================================
+
+#2. WAP to find the diagonal matrix absolute difference?
+# suppose  1   2  3
+#          7   9  3
+#         12   5  67
+#result:=>53
+
+#======================================================================================================================
+
+#3. WAP to solve this pattern
+"""  A
+     A B
+     A B C
+     A B C D
+     A B C D E
+     A B C D
+     A B C
+     A B
+     A         """"
+
+
+
+
+
+
